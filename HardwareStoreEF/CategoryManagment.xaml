@@ -1,0 +1,47 @@
+﻿<Window x:Class="HardwareStoreEF.CategoryManagment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:HardwareStoreEF"
+        mc:Ignorable="d"
+        Closing="DataWindow_Closing"
+        Title="CategoryManagment" Height="450" Width="760" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid SelectionMode="Single" Foreground="#212121" Background="#2196F3" CanUserResizeColumns="False" x:Name="CategoryGrid" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Width="284" Grid.Column="0" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Foreground="#212121" Binding="{Binding Name}" Header="Category" Width="1*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid Margin="300 0 0 0">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0 0 0 0">
+                <Button Uid="0" Width="150" Content="ADD" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="1" Width="150" Content="CHANGE" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+                <Button Uid="2" Width="150" Content="DELETE" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF2196F3" Click="Button_Click" />
+            </StackPanel>
+            <Grid x:Name="GridMain" Margin="0 50 0 0">
+                <StackPanel x:Name="AddPanel">
+                    <TextBlock Text="Name" Margin="0 30 0 0" Foreground="#FF2196F3" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"></TextBlock>
+                    <TextBox Name="AddBlock" Margin="100,20,100,0" Height="25"></TextBox>
+                    <Button Content="Add" x:Name="AddButton" Margin="140,20,140,0" Click="Add_Click"></Button>
+                </StackPanel>
+                <StackPanel x:Name="ChangePanel" Visibility="Hidden">
+                    <TextBlock Text="Category" Margin="0 30 0 0" Foreground="#FF2196F3" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                    <ComboBox Name="CategoryComboBoxChange" Margin="100 0 100 0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Select a category">
+                    </ComboBox>
+                    <TextBlock Text="Name" Margin="0 20 0 0" Foreground="#FF2196F3" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"></TextBlock>
+                    <TextBox Name="ChangeBlock" Margin="100 0 100 0" Height="25"></TextBox>
+                    <Button Content="Change" x:Name="ChangeButton" Margin="140,30,140,0" Click="Change_Click"></Button>
+                </StackPanel>
+                <StackPanel x:Name="DeletePanel" Visibility="Hidden">
+                    <TextBlock Text="Category" Margin="0 30 0 0" Foreground="#FF2196F3" FontWeight="Bold" FontSize="14"  HorizontalAlignment="Center"></TextBlock>
+                    <ComboBox Name="CategoryComboBoxDelete" VerticalAlignment="Top" Margin="100 0 100 0" materialDesign:HintAssist.Hint="Select a category">
+                    </ComboBox>
+                    <Button Content="Delete" x:Name="DeleteButton" Margin="140,30,140,0" Click="Delete_Click"></Button>
+                </StackPanel>
+            </Grid>
+            <Grid x:Name="GridCursor" Width="150" Height="5" Background="#FF2196F3" HorizontalAlignment="Left" Margin="0,45,0,360" />
+        </Grid>
+    </Grid>
+</Window>

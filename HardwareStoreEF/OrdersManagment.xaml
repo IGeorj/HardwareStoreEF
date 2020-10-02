@@ -1,0 +1,35 @@
+﻿<Window x:Class="HardwareStoreEF.OrdersManagment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HardwareStoreEF"
+        mc:Ignorable="d"
+        Title="OrdersManagment" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid Grid.Row="1" Grid.Column="1" SelectionMode="Single" Background="#FFFFFF" IsReadOnly="True" IsSynchronizedWithCurrentItem="True" AutoGenerateColumns="False" x:Name="OrdersGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Company}" Header="Company" />
+                <DataGridTextColumn Binding="{Binding Model}" Header="Model" />
+                <DataGridTextColumn Binding="{Binding Amount}" Header="Amount" />
+                <DataGridTextColumn Binding="{Binding Address}" Header="Address" />
+                <DataGridTextColumn Binding="{Binding FirstName}" Header="FirstName"/>
+                <DataGridTextColumn Binding="{Binding LastName}" Header="LastName" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="AcceptButton" Click="Accept_Click" Height="25" Width="70" FontSize="10">Accept</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell" BasedOn="{StaticResource MaterialDesignDataGridCell}">
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+                </Style>
+            </DataGrid.CellStyle>
+        </DataGrid>
+        <Button x:Name="ExportButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="ExportButton_Click" Margin="0 0 18 10">Export Data</Button>
+    </Grid>
+</Window>

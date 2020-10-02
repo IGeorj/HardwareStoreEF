@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="HardwareStoreEF.Login" BaseTypeListCollapsed="true">
+    <Position X="2.5" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAIAAAAAAAAAAAAAoAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Login.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HardwareStoreEF.Registration" BaseTypeListCollapsed="true">
+    <Position X="5.25" Y="4" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAIBAAAAAAAAAAAAoAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Registration.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HardwareStoreEF.Shop" BaseTypeListCollapsed="true">
+    <Position X="6" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAQAAAIAICAAAAAAgAAAAAEAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Shop.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HardwareStoreEF.ProductManagment" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAABAARAAAEAAICAAAEGAEAAACAABAAAAAAAAAA=</HashCode>
+      <FileName>ProductManagment.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HardwareStoreEF.CompanyManagment" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAECAAAAAAEAAACAAAAAAAA=</HashCode>
+      <FileName>CompanyManagment.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HardwareStoreEF.CategoryManagment" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAECAAAAAAEAAACAAAAAAAA=</HashCode>
+      <FileName>CategoryManagment.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="HardwareStoreEF.Users">
+    <Position X="4.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAEAAACAAAAAAAAAAAQgAAAAAAAACAAAAAAAAAAg=</HashCode>
+      <FileName>Users.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HardwareStoreEF.Products">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAEAAAACAQIgAAAAAAAAAACAAAAgEAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Products.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HardwareStoreEF.Orders">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAADAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Orders.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HardwareStoreEF.DBContext">
+    <Position X="8" Y="3.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAEAACAAAAAAAAAAAAAAAAAAEAAgEAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>DBContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HardwareStoreEF.Companies">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAQAQAAAAAAAACAAAAAAAAAAQ=</HashCode>
+      <FileName>Companies.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HardwareStoreEF.Categories">
+    <Position X="0.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Categories.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
