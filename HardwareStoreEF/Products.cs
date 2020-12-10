@@ -16,6 +16,7 @@ namespace HardwareStoreEF
 
         [Key]
         public int ProductID { get; set; }
+        public string Image { get; set; }
 
         [Required]
         [StringLength(50)]

@@ -24,6 +24,7 @@ namespace HardwareStoreEF
                                            select new
                                            {
                                                Company = company.Name,
+                                               prod.Image,
                                                prod.Model,
                                                prod.Price,
                                                prod.Amount
@@ -105,6 +106,7 @@ namespace HardwareStoreEF
                                            select new
                                            {
                                                Company = company.Name,
+                                               prod.Image,
                                                prod.Model,
                                                prod.Price,
                                                prod.Amount

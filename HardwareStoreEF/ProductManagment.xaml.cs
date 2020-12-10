@@ -1,9 +1,13 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.Win32;
+using System;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Animation;
+using System.Windows.Media.Imaging;
 
 namespace HardwareStoreEF
 {
@@ -13,7 +17,24 @@ namespace HardwareStoreEF
         private int CursorSize = 130;
         private int CursorIndex;
         private bool MenuClosed = false;
-
+        private BitmapImage image;
+        private BitmapImage changeImage;
+        public BitmapImage Image
+        {
+            get { return image; }
+            set
+            {
+                image = value;
+            }
+        }
+        public BitmapImage ChangeImage
+        {
+            get { return changeImage; }
+            set
+            {
+                changeImage = value;
+            }
+        }
         public ProductManagment()
         {
             InitializeComponent();
@@ -153,6 +174,7 @@ namespace HardwareStoreEF
                 }
                 db.Products.Add(new Products
                 {
+                    Image = $"{Image.UriSource}",
                     Model = AddModelBlock.Text,
                     Amount = int.Parse(AddAmountBlock.Text),
                     Price = int.Parse(AddPriceBlock.Text),
@@ -162,6 +184,9 @@ namespace HardwareStoreEF
                 db.SaveChanges();
             }
             Update();
+            image = null;
+            borderImage.Source = null;
+            borderImage.Source = image;
         }
 
         public void ClearBox()
@@ -193,6 +218,7 @@ namespace HardwareStoreEF
                     return;
                 }
                 Products pr = db.Products.FirstOrDefault(s => (s.Model == model && s.Companies.Name == company));
+                pr.Image = $"{changeImage.UriSource}";
                 pr.Amount = int.Parse(ChangeAmountBlock.Text);
                 pr.Price = int.Parse(ChangePriceBlock.Text);
                 pr.Model = ChangeModelBlock.Text;
@@ -203,6 +229,9 @@ namespace HardwareStoreEF
             ClearBox();
             SelectedProduct = null;
             Update();
+            changeImage = null;
+            borderImage2.Source = null;
+            borderImage2.Source = changeImage;
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -237,11 +266,39 @@ namespace HardwareStoreEF
             using (DBContext db = new DBContext())
             {
                 Products pr = db.Products.FirstOrDefault(s => (s.Model == model && s.Companies.Name == company));
+                borderImage2.Source = null;
+                changeImage = new BitmapImage(new Uri(pr.Image, UriKind.Absolute));
+                borderImage2.Source = changeImage;
                 ChangeAmountBlock.Text = pr.Amount.ToString();
                 ChangePriceBlock.Text = pr.Price.ToString();
                 ChangeCompanyBox.Text = pr.Companies.Name;
                 ChangeModelBlock.Text = pr.Model;
                 ChangeCategoryBox.Text = pr.Categories.Name;
+            }
+        }
+
+        private void Add_Image_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Image Files(*.BMP; *.JPG; *.GIF; *.PNG) | *.BMP; *.JPG; *.GIF; *.PNG | All files(*.*) | *.*";
+            Nullable<bool> result = file.ShowDialog();
+            if (File.Exists(file.FileName))
+            {
+                Image = new BitmapImage(new Uri(file.FileName, UriKind.Absolute));
+                borderImage.Source = null;
+                borderImage.Source = Image;
+            }
+        }
+        private void Add_ChangeImage_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "Image Files(*.BMP; *.JPG; *.GIF; *.PNG) | *.BMP; *.JPG; *.GIF; *.PNG | All files(*.*) | *.*";
+            Nullable<bool> result = file.ShowDialog();
+            if (File.Exists(file.FileName))
+            {
+                changeImage = new BitmapImage(new Uri(file.FileName, UriKind.Absolute));
+                borderImage2.Source = null;
+                borderImage2.Source = changeImage;
             }
         }
     }
